@@ -9,7 +9,6 @@ const Category = () => {
                 setCategorys(data.data)
             })
     }, [])
-    console.log(categorys);
     return (
         <div>
             <h1 className='text-4xl text-center mb-4 mt-2'>Category</h1>

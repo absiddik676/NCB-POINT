@@ -7,14 +7,7 @@ import { useToasts } from 'react-toast-notifications';
 
 const EditCategory = () => {
     const singleCategory = useLoaderData()
-    // const { data: singleCategory = [], refetch, } = useQuery({
-    //     queryKey: ['singleCategory'],
-    //     queryFn: async () => {
-    //         const res = await axios.get(`http://localhost:3000/single-category/${id.id}`)
-    //         console.log(res.data);
-    //         return res.data;
-    //     }
-    // })
+   
     const { addToast } = useToasts();
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
