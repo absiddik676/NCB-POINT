@@ -21,45 +21,50 @@ const SingleProduct = ({ product }) => {
             <div className="card w-full bg-base-100 shadow-xl h-full">
                 <figure className="sh">
                     {
-                            <Swiper
-                                spaceBetween={30}
-                                centeredSlides={true}
-                                autoplay={{
-                                    delay: 2500,
-                                    disableOnInteraction: false,
-                                }}
-                                speed={1500}
-                                pagination={{
-                                    clickable: true,
-                                }}
+                        <Swiper
+                            spaceBetween={30}
+                            centeredSlides={true}
+                            autoplay={{
+                                delay: 2500,
+                                disableOnInteraction: false,
+                            }}
+                            speed={1500}
+                            pagination={{
+                                clickable: true,
+                            }}
 
-                                modules={[Autoplay, Pagination, Navigation]}
-                                onAutoplayTimeLeft={onAutoplayTimeLeft}
-                                className="mySwiper h-64"
-                            >
+                            modules={[Autoplay, Pagination, Navigation]}
+                            onAutoplayTimeLeft={onAutoplayTimeLeft}
+                            className="mySwiper h-64"
+                        >
 
-                                {
-                                    product.ProfessionalImgArray.map((img, index) => 
+                            {
+                                product.ProfessionalImgArray.map((img, index) =>
                                     <SwiperSlide key={index} className='bg-no-repeat '>
                                         <img className='w-full h-full' src={img} alt="" />
                                     </SwiperSlide>
                                 )
-                                
-                                }
-                                <div className="autoplay-progress" slot="container-end">
-                                    <svg viewBox="0 0 48 48" ref={progressCircle}>
-                                        <circle cx="5" cy="5" r="2"></circle>
-                                    </svg>
-                                    <span ref={progressContent}></span>
-                                </div>
-                            </Swiper>
+
+                            }
+                            <div className="autoplay-progress" slot="container-end">
+                                <svg viewBox="0 0 48 48" ref={progressCircle}>
+                                    <circle cx="5" cy="5" r="2"></circle>
+                                </svg>
+                                <span ref={progressContent}></span>
+                            </div>
+                        </Swiper>
                     }
                 </figure>
                 <div className="card-body px-3">
                     <h2 className="card-title text-xl">{product?.productTitle}</h2>
-                    <p className='font-bold'>Price:$<span>{product?.specialPrice}</span> <span>${product?.RegularPrice}</span></p>
-                    <div className="card-actions">
-                        <button className="btn btn-primary">Buy Now</button>
+                    <p className=''>Price:$<span>{product?.specialPrice}</span> <span className='line-through decoration-red-600 decoration-2 text-gray-400'>${product?.RegularPrice}</span></p>
+                    <div className='flex  gap-5'>
+                        <div className="card-actions">
+                            <button className="btn btn-primary">See details</button>
+                        </div>
+                        <div className="card-actions">
+                            <a target='blank' className="btn btn-primary" href="https://wa.me/01706642298">Oder now</a>
+                        </div>
                     </div>
                 </div>
             </div>
