@@ -9,6 +9,7 @@ import Category from "../page/Admin/Category/Category";
 import EditCategory from "../page/Home/Category/EditCategory";
 import AddProduct from "../page/Admin/AddProduct/AddProduct";
 import Products from "../page/Products/Products";
+import AddCategory from "../page/Admin/AddCategory/AddCategory";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/addProduct',
                 element: <AddProduct />,
+            },
+            {
+                path: '/dashboard/AddCategory',
+                element: <AddCategory />,
             },
         ]
     },

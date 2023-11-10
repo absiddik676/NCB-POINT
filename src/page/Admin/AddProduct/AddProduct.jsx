@@ -19,6 +19,8 @@ const AddProduct = () => {
     const onSubmit = async (data) => {
         const ProfessionalImgArray = [];
         const realImgArray = [];
+
+        console.log(data);
       
         // Create an array of promises for realImg uploads
         const realImgPromises = realImg.map(async (imageFile) => {
@@ -55,7 +57,7 @@ const AddProduct = () => {
         // Wait for all image upload promises to complete
         await Promise.all([...realImgPromises, ...professionalImgPromises]);
       
-        const { AdvancePayment, RegularPrice, category, description, productTitle, specialPrice } = data;
+        const { AdvancePayment, RegularPrice, category, description, productTitle, specialPrice, Features, PackageIncluding , Specifications, Warranty} = data;
         const productData = {
           AdvancePayment,
           RegularPrice,
@@ -65,6 +67,10 @@ const AddProduct = () => {
           specialPrice,
           ProfessionalImgArray,
           realImgArray,
+          Warranty,
+          Specifications,
+          PackageIncluding,
+          Features
         };
       
         console.log(productData);
@@ -181,6 +187,62 @@ const AddProduct = () => {
                             className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                             placeholder="Description"
                             {...register("description")}
+                        />
+                    </div>
+
+                </div>
+                <div className='flex gap-5'>
+                    <div className='w-1/2'>
+                        <label htmlFor="address" className="block text-sm font-medium text-gray-700">
+                        Warranty
+                        </label>
+                        <input
+                            id="Warranty"
+                            name="Warranty"
+                            className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            placeholder="Advance Payment"
+                            {...register("Warranty")}
+                        ></input>
+                    </div>
+                    <div className='w-1/2'>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                        Features 
+                        </label>
+                        <input
+                            id="Features"
+                            type="text"
+                            autoComplete="Features"
+                            className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            placeholder="Features"
+                            {...register("Features")}
+                        />
+                    </div>
+
+                </div>
+                <div className='flex gap-5'>
+                    <div className='w-1/2'>
+                        <label htmlFor="address" className="block text-sm font-medium text-gray-700">
+                        Specifications
+                        </label>
+                        <input
+                            id="Specifications"
+                            name="Specifications"
+                            className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            placeholder="Advance Payment"
+                            {...register("Specifications")}
+                        ></input>
+                    </div>
+                    <div className='w-1/2'>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                        Package including 
+                        </label>
+                        <input
+                            id="PackageIncluding"
+                            type="text"
+                            autoComplete="PackageIncluding"
+                            className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            placeholder="PackageIncluding"
+                            {...register("PackageIncluding")}
                         />
                     </div>
 

@@ -18,6 +18,7 @@ const Dashboard = () => {
             {/* Sidebar content here */}
            <Link to='/dashboard/category' className=''>Category</Link>
            <Link to='/dashboard/addProduct' className=''>Add Product</Link>
+           <Link to='/dashboard/addCategory' className=''>Add Category</Link>
           </ul>
 
         </div>
